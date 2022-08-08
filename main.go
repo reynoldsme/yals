@@ -21,7 +21,6 @@ func shorten(url string) Response {
 		ident := randomIdentifier()
 		linkStore[ident] = string(decoded)
 		response = Response{hostURI + ident, "", http.StatusOK}
-
 	}
 	return response
 
