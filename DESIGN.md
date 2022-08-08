@@ -38,3 +38,10 @@
     * We already provide the link to shorten via the API URL, so why not do both there?
     * In practice, I think it's not unlikely to encounter proxies and load balancers that mutate the Accept header before the request hits the backend service.
       * We don't always directly control the full path between our users and our backend services.
+* How should configs be handled?
+  * Ideally they should be handled by a robust library like [viper](https://github.com/spf13/viper) to easily allow configs to be provided via environment variables (preferable in kubernetes land) or a number of interchangeable machine friendly text formats like JSON or YAML.
+* What about logging?
+  * I think it's reasonable to assume that a service such as this will live behind a reverse proxy which will provide adequate logging of web requests.
+    * Logging to files or even standard error / standard out is really only acceptable if you take the extra step to configure log levels, which I'm considering beyond the scope for this exercise. Failing to add configurable log levels can have drastic consequences in the real world.
+      * While not exactly logging, distributed tracing via something like OpenTelemetry is fantastic for getting deeper insight into application performance.
+  
