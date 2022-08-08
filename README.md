@@ -94,3 +94,5 @@ HTTP Location header: `https://www.example.com/`
 ## Other notes
 
 The application defaults to `http://127.0.0.1:8086` for the bind address which is reflected in the generated short links.
+
+See DESIGN.md for other thoughts on the design of the service.
