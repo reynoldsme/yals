@@ -46,7 +46,7 @@ Note: As a URL cannot contain another url unescaped, the API caller is responsib
 
 To shorten the URL `https://www.example.com/coolthing?tacos=yes`:
 
-`curl "<HOST>/api/v1/shorten/aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY29vbHRoaW5nP3RhY29zPXllcw=="`
+`curl "http://127.0.0.1:8086/api/v1/shorten/aHR0cHM6Ly93d3cuZXhhbXBsZS5jb20vY29vbHRoaW5nP3RhY29zPXllcw=="`
 
 Response:
 
@@ -57,16 +57,16 @@ HTTP response body:
 
 ```json
 {
-    "url": "<HOST>/aGVsbG8hCg",
+    "url": "http://127.0.0.1:8086/aGVsbG8hCg",
     "error": ""
 }
 ```
 
 ### Lookup a Shortened URL
 
-To shorten the identifier `aGVsbG8hCg`:
+To look up the identifier `aGVsbG8hCg`:
 
-`curl "<HOST>/api/v1/lookup/aGVsbG8hCg"`
+`curl "http://127.0.0.1:8086/api/v1/lookup/aGVsbG8hCg"`
 
 Response:
 
@@ -84,7 +84,7 @@ HTTP response body:
 
 ### Using a Shortened URL
 
-`curl "<HOST>/aGVsbG8hCg"`
+`curl "http://127.0.0.1:8086/aGVsbG8hCg"`
 
 Response:
 
